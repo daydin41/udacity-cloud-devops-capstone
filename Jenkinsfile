@@ -22,9 +22,9 @@ pipeline {
          stage('Deploying') {
               steps{
                   echo 'Deploying to AWS...'
-                  withAWS(credentials: 'aws', region: 'us-west-2') {
+                  withAWS(credentials: 'aws-static', region: 'us-west-2') {
                       sh "aws eks --region us-west-2 update-kubeconfig --name devopscluster"
-                      sh "kubectl config use-context arn:aws:eks:us-west-2:988212813982:cluster/devopscluster"
+                      sh "kubectl config use-context arn:aws:eks:us-west-2:656321790976:cluster/devopscluster"
                       sh "kubectl set image deployments/udacity-cloud-devops-capstone udacity-cloud-devops-capstone=daydin41/udacity-cloud-devops-capstone:latest"
                       sh "kubectl apply -f deployment/nginx-deployment.yml"                      
                       sh 'kubectl apply -f deployment/service.yml'
