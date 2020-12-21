@@ -26,7 +26,7 @@ pipeline {
                       sh "aws eks --region us-west-2 update-kubeconfig --name devopscluster"
                       sh "kubectl config use-context arn:aws:eks:us-west-2:656321790976:cluster/devopscluster"
                       sh "kubectl apply -f deployment/nginx-deployment.yml"                      
-                      sh 'kubectl apply -f deployment/service.yml'
+                      sh 'kubectl apply -f deployment/server.yml'
 
                   }
               }
