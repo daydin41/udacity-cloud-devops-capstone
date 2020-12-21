@@ -18,8 +18,8 @@ spec:
     spec:
       containers:
       - image: daydin41/udacity-cloud-devops-capstone:new
-          imagePullPolicy: Always
-          name: capstone-project-cloud-devops
-          ports:
-            - containerPort: 80
+        imagePullPolicy: Always
+        name: capstone-project-cloud-devops
+        ports:
+          - containerPort: 80
 
